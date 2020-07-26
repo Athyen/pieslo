@@ -1,10 +1,10 @@
 exports.run = (client, message, args, level) => {
   const warnMsg = 'Coś poszło nie tak. Aby dać suba użyj komendy /daj suba'
   if (!args[0]) return message.channel.sendwarnMsg
-
   if (client.normalize(args[0]) !== 'sub' && client.normalize(args[0]) !== 'suba') return message.channel.send(warnMsg)
 
   const sub = message.guild.roles.cache.get('562331914959323176')
+
   if (message.member.roles.cache.has(sub.id)) {
     message.channel.send('To miłe, że chcesz po raz drugi dać suba szamanom. Podziwiam Twój entuzjazm!')
   } else {
