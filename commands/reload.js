@@ -1,13 +1,13 @@
-exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
-  if (!args || args.length < 1) return message.reply('Musisz podać nazwę komendy, którą chcesz przeładować.')
+exports.run = async (client, message, args, level) => {
+  if (!args || args.length < 1) return message.reply('musisz podać nazwę komendy, którą chcesz przeładować.')
   const command = client.commands.get(args[0]) || client.commands.get(client.aliases.get(args[0]))
   let response = await client.unloadCommand(args[0])
-  if (response) return message.reply(`Błąd wyłączania: ${response}`)
+  if (response) return message.reply(`błąd wyłączania: ${response}`)
 
   response = client.loadCommand(command.help.name)
-  if (response) return message.reply(`Błąd wczytywania: ${response}`)
+  if (response) return message.reply(`błąd wczytywania: ${response}`)
 
-  message.reply(`Komenda \`${command.help.name}\` została przeładowana.`)
+  message.reply(`komenda \`${command.help.name}\` została przeładowana.`)
 }
 
 exports.conf = {
