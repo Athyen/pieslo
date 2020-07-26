@@ -25,8 +25,8 @@ module.exports = async (client, message) => {
 
   if (level < client.levelCache[cmd.conf.permLevel]) {
     return message.channel.send(`Nie masz dostępu do tej komendy.
-  Twój poziom uprawnień to ${level} (${client.config.permLevels.find(l => l.level === level).name})
-  Ta komenda wymaga poziomu ${client.levelCache[cmd.conf.permLevel]} (${cmd.conf.permLevel})`)
+Twój poziom uprawnień to ${level} (${client.config.permLevels.find(l => l.level === level).name})
+Ta komenda wymaga poziomu ${client.levelCache[cmd.conf.permLevel]} (${cmd.conf.permLevel})`)
   }
 
   message.author.permLevel = level
