@@ -31,5 +31,5 @@ exports.help = {
   name: 'say',
   category: 'Różne',
   description: 'Pozwala wysyłać wiadomości jako bot.',
-  usage: 'say nazwa\_kanału tekst' // eslint-disable-line no-useless-escape
+  usage: 'say nazwa-kanału tekst' // eslint-disable-line no-useless-escape
 }
