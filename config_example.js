@@ -5,7 +5,7 @@ const config = {
   permLevels: [
     {
       level: 0,
-      name: 'User',
+      name: 'Użytkownik',
       check: () => true
     },
     {
