@@ -1,7 +1,7 @@
 exports.run = (client, message, args, level) => {
   if (!args[0]) {
     const myCommands = message.guild ? client.commands.filter(cmd => client.levelCache[cmd.conf.permLevel] <= level) : client.commands.filter(cmd => client.levelCache[cmd.conf.permLevel] <= level && cmd.conf.guildOnly !== true)
-
+    console.log(myCommands)
     const commandNames = myCommands.keyArray()
     const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0)
 
