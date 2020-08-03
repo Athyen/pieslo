@@ -15,6 +15,11 @@ exports.run = async (client, message, args, level) => {
   if (!channel) return reply('Taki kanał nie istnieje.')
 
   args.shift(2)
+  for (let i = 0; i < args.length; i++) {
+    if (args[i][0] === '@') {
+      args[i] = (message && message.guild && message.guild.members.cache.find(member => member.nickname && client.normalize(member.nickname) === client.normalize(args[i].slice(1)))) || client.users.cache.find(user => client.normalize(user.username) === client.normalize(args[i].slice(1))) || args[i]
+    }
+  }
   const content = args.join(' ')
 
   channel.send(content)
